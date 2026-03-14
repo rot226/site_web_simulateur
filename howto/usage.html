@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage – LoRaFlexSim</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LoRaFlexSim</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../paper.html">Paper</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="index.html">How To</a></li>
+                <li><a href="../research.html">Research</a></li>
+                <li><a href="../authors.html">Authors</a></li>
+                <li><a href="https://github.com/LoRaFlexSim/LoRaFlexSim" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Usage</h2>
+        <p>Once LoRaFlexSim is installed you can run simulations using the command line. The <code>examples/run_basic.py</code> script accepts several parameters that let you tailor scenarios to your needs.</p>
+        <ul>
+            <li><strong>--nodes &lt;N&gt;</strong> – number of end devices in the simulation.</li>
+            <li><strong>--steps &lt;S&gt;</strong> – number of discrete simulation steps to run.</li>
+            <li><strong>--gateways &lt;G&gt;</strong> – number of gateways (default: 1).</li>
+            <li><strong>--interval &lt;T&gt;</strong> – inter‑arrival time between packet generations in seconds.</li>
+            <li><strong>--adr &lt;METHOD&gt;</strong> – Adaptive Data Rate method (e.g., <code>avg</code>, <code>max</code>, <code>exploRa-AT</code>, <code>ml</code>).</li>
+            <li><strong>--class &lt;CLASS&gt;</strong> – LoRaWAN device class (<code>A</code>, <code>B</code> or <code>C</code>).</li>
+        </ul>
+        <p>Example invocation:</p>
+        <pre><code>python examples/run_basic.py --nodes 50 --steps 2000 --gateways 2 --interval 30 --adr avg --class A</code></pre>
+        <p>Additional parameters (such as channel assignments or duty‑cycle constraints) can be specified via configuration files or by extending the provided scripts. You may write your own scenarios by importing the core modules from the <code>loraflexsim</code> package and composing nodes, gateways, servers and channels.</p>
+        <p>For advanced experiments – such as evaluating custom ADR algorithms, mobility models or energy optimisation – please refer to the <a href="../research.html">research page</a>.</p>
+    </section>
+    <footer>
+        <p>© 2026 LoRaFlexSim – Nazi Bony University.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>

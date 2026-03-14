@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoRaFlexSim – Flexible LoRa/LoRaWAN Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LoRaFlexSim</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="paper.html">Paper</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="howto/index.html">How To</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="authors.html">Authors</a></li>
+                <li><a href="https://github.com/LoRaFlexSim/LoRaFlexSim" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>LoRaFlexSim</h1>
+            <p>A flexible, event‑driven simulator for LoRa and LoRaWAN networks.</p>
+            <p>Version 1 introduces complete LoRaWAN support, including multichannel operation, device classes A/B/C, OTAA, mobility models, ADR methods, per‑node energy accounting and interactive dashboards.</p>
+            <p><a class="link-button" href="howto/index.html">Get Started</a></p>
+        </div>
+        <div class="hero-img">
+            <img src="images/lorawan_architecture.png" alt="LoRa/LoRaWAN network architecture">
+        </div>
+    </section>
+
+    <section id="overview">
+        <h2>Overview</h2>
+        <p>LoRaFlexSim is a modular and event‑driven simulator designed to reproduce the main behaviours of LoRaWAN networks while enabling rapid prototyping of new mechanisms. Its lightweight architecture supports both fidelity and extensibility, giving researchers and practitioners a practical tool to investigate scalability, energy efficiency and adaptive strategies.</p>
+        <p>The simulator extends reference frameworks with multichannel support, classes A/B/C, OTAA with session key management, mobility models, Adaptive Data Rate (ADR) schemes and per‑node energy accounting.</p>
+    </section>
+
+    <section id="features">
+        <h2>Key Features</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Multichannel & Multi‑Gateway</h3>
+                <p>Simulate deployments with one or multiple gateways and allocate transmissions across several channels to study traffic balancing and interference.</p>
+            </div>
+            <div class="feature">
+                <h3>Device Classes A/B/C</h3>
+                <p>Model specific behaviours of end‑device classes: delayed reception windows (class A), beacons and ping slots (class B) and continuous listening (class C).</p>
+            </div>
+            <div class="feature">
+                <h3>Adaptive Data Rate</h3>
+                <p>Test various ADR strategies—average, maximum, machine‑learning‑based and EXPLoRa‑AT—to balance airtime and transmission power.</p>
+            </div>
+            <div class="feature">
+                <h3>OTAA & MAC Commands</h3>
+                <p>Complete support for Over‑The‑Air Activation with AES/MIC and a wide range of MAC commands such as LinkADR, LinkCheck and DutyCycle.</p>
+            </div>
+            <div class="feature">
+                <h3>Mobility & Energy Accounting</h3>
+                <p>Incorporate realistic mobility models and compute energy consumption per node to evaluate network lifetime.</p>
+            </div>
+            <div class="feature">
+                <h3>Validation & Extensibility</h3>
+                <p>Built‑in validation compares LoRaFlexSim outputs with traces from reference frameworks, ensuring reliable results while allowing easy extension.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <p>LoRaFlexSim is described in the following papers:</p>
+        <ul>
+            <li><a href="https://ieeexplore.ieee.org/abstract/document/11304034" target="_blank">LoRaFlexSim: A Flexible LoRa/LoRaWAN Simulator</a> – the main paper detailing the simulator’s architecture and validation.</li>
+            <li><a href="https://ieeexplore.ieee.org/abstract/document/11323245" target="_blank">Implementing LoRaWAN End‑Device Classes A, B, and C in LoRaFlexSim</a> – an extended study on implementing different classes of LoRaWAN devices.</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>© 2026 LoRaFlexSim – Nazi Bony University.</p>
+        <p>See the <a href="authors.html">authors page</a> for more information or explore <a href="research.html">research opportunities</a>.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

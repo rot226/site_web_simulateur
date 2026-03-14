@@ -1,0 +1,153 @@
+/* Global styles for the LoRaFlexSim website */
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f7fbff;
+}
+
+a {
+    color: #006699;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: #002d40;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-left: 1.5rem;
+}
+
+nav a {
+    color: white;
+    font-weight: 500;
+}
+
+/* Highlight current navigation link */
+.active {
+    border-bottom: 2px solid #00a6c4;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background: linear-gradient(90deg, #00a6c4 0%, #006699 100%);
+    color: white;
+}
+
+.hero-text {
+    flex: 1 1 50%;
+    padding-right: 2rem;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    max-width: 40rem;
+}
+
+.hero-img {
+    flex: 1 1 40%;
+    text-align: center;
+}
+
+.hero-img img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section h2 {
+    color: #006699;
+    margin-top: 0;
+}
+
+section ul {
+    margin-left: 1.5rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.feature {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-4px);
+}
+
+.feature h3 {
+    color: #006699;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.feature p {
+    font-size: 0.95rem;
+}
+
+footer {
+    background-color: #002d40;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #9bd5e5;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 3rem 1rem;
+    }
+    .hero-text {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}

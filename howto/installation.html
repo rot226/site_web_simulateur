@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation – LoRaFlexSim</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">LoRaFlexSim</div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../paper.html">Paper</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="index.html">How To</a></li>
+                <li><a href="../research.html">Research</a></li>
+                <li><a href="../authors.html">Authors</a></li>
+                <li><a href="https://github.com/LoRaFlexSim/LoRaFlexSim" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Installation</h2>
+        <p>LoRaFlexSim is implemented in Python. To get started you need Python 3.11 or newer and a few scientific libraries. The following steps describe how to prepare your environment.</p>
+        <ol>
+            <li><strong>Install dependencies</strong>. Use <code>pip</code> to install the required packages:
+                <pre><code>pip install numpy pandas scipy matplotlib plotly panel fastapi uvicorn pillow</code></pre>
+            </li>
+            <li><strong>Obtain the source code</strong>. Download or clone the LoRaFlexSim source code from the official repository or contact the authors for a copy. Unpack the archive and navigate to the project root.</li>
+            <li><strong>Install in editable mode</strong>. From the project root, install LoRaFlexSim in editable mode so that changes are immediately reflected:
+                <pre><code>pip install -e .</code></pre>
+            </li>
+            <li><strong>Verify installation</strong>. Run a simple script to ensure that everything is set up correctly:
+                <pre><code>python examples/run_basic.py --nodes 10 --steps 1000</code></pre>
+            </li>
+        </ol>
+        <p>If you encounter any issues during installation, please consult the usage guide or contact the authors via the <a href="../authors.html">authors page</a>.</p>
+    </section>
+    <footer>
+        <p>© 2026 LoRaFlexSim – Nazi Bony University.</p>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
