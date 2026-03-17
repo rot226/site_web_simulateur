@@ -124,6 +124,33 @@ section ul {
     margin-left: 1.5rem;
 }
 
+p,
+li {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+pre,
+code {
+    font-family: "Cascadia Mono", "Consolas", "Fira Code", "Courier New", monospace;
+}
+
+pre {
+    max-width: 100%;
+    overflow-x: auto;
+    box-sizing: border-box;
+    background: #f1f6fa;
+    border: 1px solid #d0e3ee;
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+}
+
+code {
+    max-width: 100%;
+    overflow-x: auto;
+    font-size: 0.95em;
+}
+
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -211,5 +238,9 @@ footer a {
     .hero-text {
         padding-right: 0;
         margin-bottom: 2rem;
+    }
+
+    pre {
+        padding: 0.7rem 0.75rem;
     }
 }
