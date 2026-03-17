@@ -23,13 +23,13 @@ for file_path in html_files:
         continue
 
     head = head_match.group(1)
-    expected_icon = f'<link rel="icon" type="image/png" href="{expected_href}">' 
-    expected_shortcut = f'<link rel="shortcut icon" href="{expected_href}">' 
+    expected_icon = f'<link rel="icon" type="image/png" href="{expected_href}">'
 
     if expected_icon not in head:
         errors.append(f'{rel}: balise manquante ou incorrecte -> {expected_icon}')
-    if expected_shortcut not in head:
-        errors.append(f'{rel}: balise manquante ou incorrecte -> {expected_shortcut}')
+
+    if 'rel="shortcut icon"' in head:
+        errors.append(f'{rel}: balise obsolète détectée -> <link rel="shortcut icon" ...>')
 
 if errors:
     print('ÉCHEC: certaines pages publiques n\'ont pas les balises favicon attendues:\n')
