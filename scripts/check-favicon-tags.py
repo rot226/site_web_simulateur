@@ -24,9 +24,18 @@ for file_path in html_files:
 
     head = head_match.group(1)
     expected_icon = f'<link rel="icon" type="image/png" href="{expected_href}">'
+    expected_apple = f'<link rel="apple-touch-icon" href="{expected_href}">'
+    expected_manifest_href = ('../' * depth) + 'site.webmanifest'
+    expected_manifest = f'<link rel="manifest" href="{expected_manifest_href}">'
 
     if expected_icon not in head:
         errors.append(f'{rel}: balise manquante ou incorrecte -> {expected_icon}')
+
+    if expected_apple not in head:
+        errors.append(f'{rel}: balise manquante ou incorrecte -> {expected_apple}')
+
+    if expected_manifest not in head:
+        errors.append(f'{rel}: balise manquante ou incorrecte -> {expected_manifest}')
 
     if 'rel="shortcut icon"' in head:
         errors.append(f'{rel}: balise obsolète détectée -> <link rel="shortcut icon" ...>')
