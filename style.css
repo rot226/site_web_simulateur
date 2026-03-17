@@ -19,7 +19,7 @@ a:hover {
 header {
     background-color: #002d40;
     color: white;
-    padding: 1rem 2rem;
+    padding: clamp(0.7rem, 2vw, 1rem) clamp(0.9rem, 4vw, 2rem);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,7 +79,7 @@ nav a {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding: 4rem 2rem;
+    padding: clamp(1.5rem, 5vw, 4rem) clamp(0.9rem, 4vw, 2rem);
     background: linear-gradient(90deg, #00a6c4 0%, #006699 100%);
     color: white;
 }
@@ -90,12 +90,13 @@ nav a {
 }
 
 .hero-text h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.65rem, 5.4vw, 2.5rem);
     margin-bottom: 1rem;
+    line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1.1rem;
+    font-size: clamp(0.96rem, 2.4vw, 1.1rem);
     max-width: 40rem;
 }
 
@@ -105,12 +106,15 @@ nav a {
 }
 
 .hero-img img {
+    width: min(100%, clamp(220px, 45vw, 470px));
     max-width: 100%;
     height: auto;
+    max-height: min(52vh, 420px);
+    object-fit: contain;
 }
 
 section {
-    padding: 3rem 2rem;
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(0.9rem, 4vw, 2rem);
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -118,6 +122,7 @@ section {
 section h2 {
     color: #006699;
     margin-top: 0;
+    font-size: clamp(1.3rem, 3.8vw, 2rem);
 }
 
 section ul {
@@ -126,6 +131,7 @@ section ul {
 
 p,
 li {
+    font-size: clamp(0.95rem, 2.2vw, 1.06rem);
     overflow-wrap: anywhere;
     word-break: break-word;
 }
@@ -161,7 +167,7 @@ code {
     background: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1.5rem;
+    padding: clamp(0.9rem, 2.8vw, 1.5rem);
     transition: transform 0.2s ease-in-out;
 }
 
@@ -172,11 +178,11 @@ code {
 .feature h3 {
     color: #006699;
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    font-size: clamp(1.05rem, 2.8vw, 1.2rem);
 }
 
 .feature p {
-    font-size: 0.95rem;
+    font-size: clamp(0.9rem, 2.2vw, 0.98rem);
 }
 
 footer {
@@ -195,7 +201,7 @@ footer a {
     header {
         flex-wrap: wrap;
         gap: 0.75rem;
-        padding: 1rem;
+        padding: clamp(0.7rem, 3vw, 1rem);
     }
 
     .nav-toggle {
@@ -233,14 +239,32 @@ footer a {
 
     .hero {
         flex-direction: column;
-        padding: 3rem 1rem;
+        padding: clamp(1.4rem, 6vw, 3rem) clamp(0.8rem, 3.2vw, 1rem);
     }
     .hero-text {
         padding-right: 0;
-        margin-bottom: 2rem;
+        margin-bottom: clamp(1rem, 4vw, 2rem);
+    }
+
+    section {
+        padding: clamp(1.3rem, 5vw, 2rem) clamp(0.8rem, 3.5vw, 1.1rem);
     }
 
     pre {
         padding: 0.7rem 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 0.65rem 0.75rem;
+    }
+
+    .hero {
+        padding: 1.2rem 0.75rem;
+    }
+
+    section {
+        padding: 1.15rem 0.75rem;
     }
 }
