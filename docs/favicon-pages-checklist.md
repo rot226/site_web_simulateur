@@ -17,3 +17,6 @@ Cette checklist recense les pages publiques de `loraflexsim.org` qui doivent con
 ## Règle de validation avant mise en production
 - [x] Exécuter `python scripts/check-favicon-tags.py`.
 - [x] Le workflow CI `.github/workflows/favicon-check.yml` doit passer; sinon la mise en production est bloquée.
+
+## Convention technique
+- favicon unique = image assets existante
