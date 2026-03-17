@@ -173,6 +173,12 @@ code {
     font-size: 0.95em;
 }
 
+pre code {
+    display: block;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -269,6 +275,11 @@ footer a {
 
     pre {
         padding: 0.7rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    pre code {
+        font-size: 0.88rem;
     }
 }
 
@@ -300,5 +311,18 @@ footer a {
 
     section {
         padding: 1.15rem 0.75rem;
+    }
+
+    pre {
+        padding: 0.62rem 0.65rem;
+        font-size: 0.85rem;
+    }
+
+    code {
+        font-size: 0.9em;
+    }
+
+    pre code {
+        font-size: 0.84rem;
     }
 }
