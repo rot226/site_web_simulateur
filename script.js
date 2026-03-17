@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const setMenuState = isOpen => {
         nav.classList.toggle('is-open', isOpen);
         navToggle.setAttribute('aria-expanded', String(isOpen));
-        navToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu de navigation' : 'Ouvrir le menu de navigation');
+        navToggle.setAttribute('aria-label', isOpen ? 'Masquer le menu principal' : 'Afficher le menu principal');
     };
 
     setMenuState(false);
@@ -54,9 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
         setMenuState(!isOpen);
     });
 
+
+    const viewportQuery = window.matchMedia('(max-width: 768px)');
+
+    const closeMenuOnDesktop = event => {
+        if (!event.matches) {
+            setMenuState(false);
+        }
+    };
+
+    if (typeof viewportQuery.addEventListener === 'function') {
+        viewportQuery.addEventListener('change', closeMenuOnDesktop);
+    } else if (typeof viewportQuery.addListener === 'function') {
+        viewportQuery.addListener(closeMenuOnDesktop);
+    }
+
     nav.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
-            if (window.matchMedia('(max-width: 768px)').matches) {
+            if (viewportQuery.matches) {
                 setMenuState(false);
             }
         });
