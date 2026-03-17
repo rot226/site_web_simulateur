@@ -1,15 +1,26 @@
 // Navigation behaviour: active link, mobile toggle and keyboard accessibility
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav a');
+
     const normalizePath = path => {
         if (!path) {
             return '/';
         }
 
-        let normalizedPath = path;
+        let normalizedPath = path.trim();
 
+        if (!normalizedPath.startsWith('/')) {
+            normalizedPath = `/${normalizedPath}`;
+        }
+
+        normalizedPath = normalizedPath.replace(/\/+$/, '');
+
+        if (normalizedPath === '') {
+            normalizedPath = '/';
+        }
+
+        normalizedPath = normalizedPath.replace(/\/index\.html$/i, '/');
         normalizedPath = normalizedPath.replace(/\.html$/i, '');
-        normalizedPath = normalizedPath.replace(/\/index$/i, '');
 
         if (normalizedPath.length > 1) {
             normalizedPath = normalizedPath.replace(/\/+$/, '');
@@ -17,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return normalizedPath || '/';
     };
+
+    const isHomePath = path => path === '/';
+    const isHowToPath = path => path === '/howto' || path.startsWith('/howto/');
 
     const currentPath = normalizePath(window.location.pathname);
 
@@ -29,7 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const normalizedHref = normalizePath(new URL(href, window.location.href).pathname);
 
-        if (currentPath === normalizedHref) {
+        const shouldActivate =
+            currentPath === normalizedHref ||
+            (isHomePath(currentPath) && isHomePath(normalizedHref)) ||
+            (isHowToPath(currentPath) && normalizedHref === '/howto');
+
+        if (shouldActivate) {
             link.classList.add('active');
         }
     });
