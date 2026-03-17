@@ -1,0 +1,22 @@
+name: Favicon compliance
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  verify-favicons:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Verify favicon tags on all public pages
+        run: python scripts/check-favicon-tags.py
