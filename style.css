@@ -25,9 +25,32 @@ header {
     align-items: center;
 }
 
+.site-nav {
+    margin-left: auto;
+}
+
 header .logo {
     font-size: 1.6rem;
     font-weight: bold;
+}
+
+.nav-toggle {
+    display: none;
+    margin-left: auto;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+    background: transparent;
+    color: white;
+    padding: 0.35rem 0.55rem;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.nav-toggle:focus-visible,
+nav a:focus-visible {
+    outline: 2px solid #00a6c4;
+    outline-offset: 2px;
 }
 
 nav ul {
@@ -142,6 +165,45 @@ footer a {
 }
 
 @media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        padding: 1rem;
+    }
+
+    .nav-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .site-nav {
+        display: none;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .site-nav.is-open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.2rem;
+        background-color: #01374d;
+        border-radius: 8px;
+        padding: 0.8rem;
+    }
+
+    nav li {
+        margin-left: 0;
+    }
+
+    nav a {
+        display: block;
+        padding: 0.4rem 0.3rem;
+    }
+
     .hero {
         flex-direction: column;
         padding: 3rem 1rem;
