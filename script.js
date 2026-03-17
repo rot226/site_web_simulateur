@@ -1,11 +1,35 @@
 // Navigation behaviour: active link, mobile toggle and keyboard accessibility
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('nav a');
-    const currentPath = window.location.pathname;
+    const normalizePath = path => {
+        if (!path) {
+            return '/';
+        }
+
+        let normalizedPath = path;
+
+        normalizedPath = normalizedPath.replace(/\.html$/i, '');
+        normalizedPath = normalizedPath.replace(/\/index$/i, '');
+
+        if (normalizedPath.length > 1) {
+            normalizedPath = normalizedPath.replace(/\/+$/, '');
+        }
+
+        return normalizedPath || '/';
+    };
+
+    const currentPath = normalizePath(window.location.pathname);
 
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (href && currentPath.endsWith(href)) {
+
+        if (!href || href.startsWith('#')) {
+            return;
+        }
+
+        const normalizedHref = normalizePath(new URL(href, window.location.href).pathname);
+
+        if (currentPath === normalizedHref) {
             link.classList.add('active');
         }
     });
