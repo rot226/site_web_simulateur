@@ -17,6 +17,7 @@ a:hover {
 }
 
 header {
+    position: relative;
     background-color: #002d40;
     color: white;
     padding: clamp(0.7rem, 2vw, 1rem) clamp(0.9rem, 4vw, 2rem);
@@ -45,6 +46,21 @@ header .logo {
     font-size: 1.2rem;
     line-height: 1;
     cursor: pointer;
+}
+
+
+.hamburger {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+}
+
+.hamburger-line {
+    width: 1.2rem;
+    height: 2px;
+    background-color: currentColor;
+    border-radius: 1px;
 }
 
 .nav-toggle:focus-visible,
@@ -234,13 +250,14 @@ footer a {
 
     nav a {
         display: block;
-        padding: 0.4rem 0.3rem;
+        padding: 0.45rem 0.35rem;
     }
 
     .hero {
         flex-direction: column;
         padding: clamp(1.4rem, 6vw, 3rem) clamp(0.8rem, 3.2vw, 1rem);
     }
+
     .hero-text {
         padding-right: 0;
         margin-bottom: clamp(1rem, 4vw, 2rem);
@@ -258,6 +275,23 @@ footer a {
 @media (max-width: 480px) {
     header {
         padding: 0.65rem 0.75rem;
+        align-items: flex-start;
+    }
+
+    header .logo {
+        font-size: 1.35rem;
+    }
+
+    .nav-toggle {
+        padding: 0.3rem 0.45rem;
+    }
+
+    nav ul {
+        padding: 0.65rem;
+    }
+
+    nav a {
+        font-size: 0.95rem;
     }
 
     .hero {
