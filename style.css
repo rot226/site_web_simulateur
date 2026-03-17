@@ -220,13 +220,13 @@ pre code {
 }
 
 .footer-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.9rem 1.4rem;
     margin: 1rem 0 0;
-    padding: 0;
+}
+
+.footer-separator {
+    display: inline-block;
+    margin: 0 0.45rem;
+    color: #9bd5e5;
 }
 
 .site-footer a {
@@ -290,10 +290,6 @@ pre code {
     pre {
         padding: 0.7rem 0.75rem;
         font-size: 0.9rem;
-    }
-
-    .footer-links {
-        gap: 0.5rem 1rem;
     }
 
     pre code {
