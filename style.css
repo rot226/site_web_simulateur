@@ -207,7 +207,7 @@ pre code {
     font-size: clamp(0.9rem, 2.2vw, 0.98rem);
 }
 
-footer {
+.site-footer {
     background-color: #002d40;
     color: white;
     text-align: center;
@@ -215,7 +215,21 @@ footer {
     margin-top: 3rem;
 }
 
-footer a {
+.footer-copy {
+    margin: 0;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.4rem;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.site-footer a {
     color: #9bd5e5;
 }
 
@@ -276,6 +290,10 @@ footer a {
     pre {
         padding: 0.7rem 0.75rem;
         font-size: 0.9rem;
+    }
+
+    .footer-links {
+        gap: 0.5rem 1rem;
     }
 
     pre code {
